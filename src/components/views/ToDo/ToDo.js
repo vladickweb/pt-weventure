@@ -7,6 +7,7 @@ export default function ToDo() {
 
 	return (
 		<main>
+			<h1>WEVENTURE Coding Challenge</h1>
             <TaskForm tasks={tasks} setTasks={setTasks}/>
             <TasksList tasks={tasks} setTasks={setTasks}/>
 		</main>
