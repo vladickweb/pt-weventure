@@ -18,16 +18,14 @@ export default function TasksList({ tasks, setTasks }) {
 	const renderTasks = () => {
 		return tasks.length > 0 ? (
 			tasks.map((elm, idx) => {
+				const { task, isFinished } = elm
+
 				return (
-					<li>
-						<span
-							key={`${elm.task}-${idx}`}
-							className={elm.isFinished ? 'done' : 'active'}
-							onClick={e => toggleTask(elm.task, e)}
-						>
-							{elm.task}
+					<li key={`${task}-${idx}`}>
+						<span className={isFinished ? 'done' : 'active'} onClick={e => toggleTask(task, e)}>
+							{task}
 						</span>
-						<DeleteTask task={elm.task} tasks={tasks} setTasks={setTasks} />
+						<DeleteTask task={task} tasks={tasks} setTasks={setTasks} />
 					</li>
 				)
 			})
